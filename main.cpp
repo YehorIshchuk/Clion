@@ -8,16 +8,16 @@ using namespace std;
 int main() {
     unique_ptr<list<int>> myList = make_unique<list<int>>(initializer_list<int>{1, 11});
 
-    /*cout << "List:" << endl;
+    cout << "List:" << endl;
     for (auto i = myList->begin(); i != myList->end(); i++) {
         cout << *i << endl;
-    }*/
+    }
 
     if (find(myList->begin(), myList->end(), 0) != myList->end()) {
         throw runtime_error("Error: List contains element 0.");
     }
 
-    /*cout << "Push Front:" << endl;
+   /* cout << "Push Front:" << endl;
     myList->push_front(10);
     myList->push_front(20);
 
