@@ -17,7 +17,7 @@ int main() {
         throw runtime_error("Error: List contains element 0.");
     }
 
-   /* cout << "Push Front:" << endl;
+    cout << "Push Front:" << endl;
     myList->push_front(10);
     myList->push_front(20);
 
