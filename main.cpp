@@ -86,7 +86,7 @@ void List<T>::pop_front()
 
 }
 
-/*template<typename T>
+template<typename T>
 void List<T>::push_back(T data)
 {
 	if (head == nullptr)
@@ -108,7 +108,7 @@ void List<T>::push_back(T data)
 	Size++;
 }
 
-template<typename T>
+/*template<typename T>
 void List<T>::clear()
 {
 	while (Size)
