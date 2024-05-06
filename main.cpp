@@ -136,7 +136,7 @@ T & List<T>::operator[](const int index)
 	}
 }
 
-/*template<typename T>
+template<typename T>
 void List<T>::push_front(T data)
 {
 	head = new Node<T>(data, head);
@@ -173,7 +173,7 @@ void List<T>::insert(T data, int index)
 
 }
 
-template<typename T>
+/*template<typename T>
 void List<T>::removeAt(int index)
 {
 	if (index == 0)
