@@ -173,7 +173,7 @@ void List<T>::insert(T data, int index)
 
 }
 
-/*template<typename T>
+template<typename T>
 void List<T>::removeAt(int index)
 {
 	if (index == 0)
@@ -200,7 +200,7 @@ void List<T>::removeAt(int index)
 
 }
 
-template<typename T>
+/*template<typename T>
 void List<T>::pop_back()
 {
 	removeAt(Size - 1);
