@@ -108,7 +108,7 @@ void List<T>::push_back(T data)
 	Size++;
 }
 
-/*template<typename T>
+template<typename T>
 void List<T>::clear()
 {
 	while (Size)
@@ -136,7 +136,7 @@ T & List<T>::operator[](const int index)
 	}
 }
 
-template<typename T>
+/*template<typename T>
 void List<T>::push_front(T data)
 {
 	head = new Node<T>(data, head);
