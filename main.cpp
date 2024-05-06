@@ -200,7 +200,7 @@ void List<T>::removeAt(int index)
 
 }
 
-/*template<typename T>
+template<typename T>
 void List<T>::pop_back()
 {
 	removeAt(Size - 1);
