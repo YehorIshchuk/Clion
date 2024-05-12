@@ -35,7 +35,7 @@ public:
         size++;
     }
 
-    /*void dequeue() {
+    void dequeue() {
         if (isEmpty()) {
             cout << "Queue is empty. Cannot dequeue.\n";
             return;
@@ -46,7 +46,7 @@ public:
         size--;
     }
 
-    T front() const {
+    /*T front() const {
         if (isEmpty()) {
             cout << "Queue is empty.\n";
             exit(1);
