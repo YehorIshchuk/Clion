@@ -76,7 +76,7 @@ public:
     }
 };
 
-/*template<typename T>
+template<typename T>
 class Stack {
 private:
     T* array;
@@ -92,7 +92,7 @@ public:
         delete[] array;
     }
 
-    void push(const T& item) {
+   /* void push(const T& item) {
         if (isFull()) {
             cerr << "Stack is full. Cannot push.\n";
             return;
