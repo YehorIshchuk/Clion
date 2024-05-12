@@ -62,7 +62,7 @@ public:
         return rearNode->data;
     }
 
-    /*bool isEmpty() const {
+    bool isEmpty() const {
         return size == 0;
     }
 
@@ -76,7 +76,7 @@ public:
     }
 };
 
-template<typename T>
+/*template<typename T>
 class Stack {
 private:
     T* array;
