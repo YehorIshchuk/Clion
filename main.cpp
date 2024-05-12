@@ -116,7 +116,7 @@ public:
         return array[topIndex];
     }
 
-    /*bool isEmpty() const {
+    bool isEmpty() const {
         return topIndex == -1;
     }
 
@@ -125,7 +125,7 @@ public:
     }
 };
 
-int main() {
+/*int main() {
     Queue<int> myQueue;
     myQueue.enqueue(5);
     myQueue.enqueue(10);
