@@ -108,7 +108,7 @@ public:
         topIndex--;
     }
 
-    /*T peek() const {
+    T peek() const {
         if (isEmpty()) {
             cout << "Stack is empty.\n";
             exit(1);
@@ -116,7 +116,7 @@ public:
         return array[topIndex];
     }
 
-    bool isEmpty() const {
+    /*bool isEmpty() const {
         return topIndex == -1;
     }
 
