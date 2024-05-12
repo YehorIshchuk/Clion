@@ -100,7 +100,7 @@ public:
         array[++topIndex] = item;
     }
 
-    /*void pop() {
+    void pop() {
         if (isEmpty()) {
             cout << "Stack is empty. Cannot pop.\n";
             return;
@@ -108,7 +108,7 @@ public:
         topIndex--;
     }
 
-    T peek() const {
+    /*T peek() const {
         if (isEmpty()) {
             cout << "Stack is empty.\n";
             exit(1);
