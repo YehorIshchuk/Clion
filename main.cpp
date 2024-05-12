@@ -125,7 +125,7 @@ public:
     }
 };
 
-/*int main() {
+int main() {
     Queue<int> myQueue;
     myQueue.enqueue(5);
     myQueue.enqueue(10);
