@@ -92,7 +92,7 @@ public:
         delete[] array;
     }
 
-   /* void push(const T& item) {
+    void push(const T& item) {
         if (isFull()) {
             cerr << "Stack is full. Cannot push.\n";
             return;
@@ -100,7 +100,7 @@ public:
         array[++topIndex] = item;
     }
 
-    void pop() {
+    /*void pop() {
         if (isEmpty()) {
             cout << "Stack is empty. Cannot pop.\n";
             return;
