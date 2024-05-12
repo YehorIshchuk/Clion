@@ -34,14 +34,14 @@ int main() {
         ++it2;
     }
 
-    /*// Виведемо результат об'єднання
+    // Виведемо результат об'єднання
     cout << "Merged and sorted array: ";
     for (int num : mergedContainer) {
         cout << num << " ";
     }
     cout << endl;
 
-    // 2. Розділення масиву на парні та непарні числа
+    /*// 2. Розділення масиву на парні та непарні числа
     vector<int> array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
     vector<int> evenNumbers;
     vector<int> oddNumbers;
