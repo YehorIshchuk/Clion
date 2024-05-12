@@ -46,7 +46,7 @@ public:
         size--;
     }
 
-    /*T front() const {
+    T front() const {
         if (isEmpty()) {
             cout << "Queue is empty.\n";
             exit(1);
@@ -62,7 +62,7 @@ public:
         return rearNode->data;
     }
 
-    bool isEmpty() const {
+    /*bool isEmpty() const {
         return size == 0;
     }
 
