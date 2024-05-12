@@ -24,7 +24,7 @@ public:
         }
     }
 
-    /*void enqueue(const T& item) {
+    void enqueue(const T& item) {
         Node* newNode = new Node(item);
         if (isEmpty()) {
             frontNode = rearNode = newNode;
@@ -35,7 +35,7 @@ public:
         size++;
     }
 
-    void dequeue() {
+    /*void dequeue() {
         if (isEmpty()) {
             cout << "Queue is empty. Cannot dequeue.\n";
             return;
