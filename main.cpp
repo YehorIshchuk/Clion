@@ -22,7 +22,7 @@ int main() {
         }
     }
 
-   /* // Додамо залишок з першого контейнера, якщо він існує
+    // Додамо залишок з першого контейнера, якщо він існує
     while (it1 != container1.end()) {
         mergedContainer.push_back(*it1);
         ++it1;
@@ -34,7 +34,7 @@ int main() {
         ++it2;
     }
 
-    // Виведемо результат об'єднання
+    /*// Виведемо результат об'єднання
     cout << "Merged and sorted array: ";
     for (int num : mergedContainer) {
         cout << num << " ";
