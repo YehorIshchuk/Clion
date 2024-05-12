@@ -1,156 +1,108 @@
 #include <iostream>
+#include <vector>
+#include <deque>
+
 using namespace std;
-
-template<typename T>
-
-class Queue {
-private:
-    struct Node {
-        T data;
-        Node* next;
-        Node(const T& data) : data(data), next(nullptr) {}
-    };
-
-    Node* frontNode;
-    Node* rearNode;
-    size_t size;
-
-public:
-    Queue() : frontNode(nullptr), rearNode(nullptr), size(0) {}
-
-    ~Queue() {
-        while (!isEmpty()) {
-            dequeue();
-        }
-    }
-
-    void enqueue(const T& item) {
-        Node* newNode = new Node(item);
-        if (isEmpty()) {
-            frontNode = rearNode = newNode;
-        } else {
-            rearNode->next = newNode;
-            rearNode = newNode;
-        }
-        size++;
-    }
-
-    void dequeue() {
-        if (isEmpty()) {
-            cout << "Queue is empty. Cannot dequeue.\n";
-            return;
-        }
-        Node* temp = frontNode;
-        frontNode = frontNode->next;
-        delete temp;
-        size--;
-    }
-
-    T front() const {
-        if (isEmpty()) {
-            cout << "Queue is empty.\n";
-            exit(1);
-        }
-        return frontNode->data;
-    }
-
-    T peek() const {
-        if (isEmpty()) {
-            cout << "Queue is empty.\n";
-            exit(1);
-        }
-        return rearNode->data;
-    }
-
-    bool isEmpty() const {
-        return size == 0;
-    }
-
-    bool isFull() const {
-
-        return false;
-    }
-
-    size_t getSize() const {
-        return size;
-    }
-};
-
-template<typename T>
-class Stack {
-private:
-    T* array;
-    int topIndex;
-    int capacity;
-
-public:
-    Stack(int capacity) : topIndex(-1), capacity(capacity) {
-        array = new T[capacity];
-    }
-
-    ~Stack() {
-        delete[] array;
-    }
-
-    void push(const T& item) {
-        if (isFull()) {
-            cerr << "Stack is full. Cannot push.\n";
-            return;
-        }
-        array[++topIndex] = item;
-    }
-
-    void pop() {
-        if (isEmpty()) {
-            cout << "Stack is empty. Cannot pop.\n";
-            return;
-        }
-        topIndex--;
-    }
-
-    T peek() const {
-        if (isEmpty()) {
-            cout << "Stack is empty.\n";
-            exit(1);
-        }
-        return array[topIndex];
-    }
-
-    bool isEmpty() const {
-        return topIndex == -1;
-    }
-
-    bool isFull() const {
-        return topIndex == capacity - 1;
-    }
-};
-
 int main() {
-    Queue<int> myQueue;
-    myQueue.enqueue(5);
-    myQueue.enqueue(10);
-    myQueue.enqueue(15);
+    // 1. Об'єднання двох відсортованих контейнерів у один відсортований масив
+    vector<int> container1 = {1, 3, 5, 7, 9};
+    vector<int> container2 = {2, 4, 6, 8, 10};
+    vector<int> mergedContainer;
 
-    cout << "Front element: " << myQueue.front() << endl;
-    cout << "Rear element: " << myQueue.peek() << endl;
-    cout << "Queue size: " << myQueue.getSize() << endl;
+    auto it1 = container1.begin();
+    auto it2 = container2.begin();
 
-    myQueue.dequeue();
-    cout << "Front element after dequeue: " << myQueue.front() << endl;
+    while (it1 != container1.end() && it2 != container2.end()) {
+        if (*it1 < *it2) {
+            mergedContainer.push_back(*it1);
+            ++it1;
+        } else {
+            mergedContainer.push_back(*it2);
+            ++it2;
+        }
+    }
 
-    Stack<int> myStack(5);
-    myStack.push(5);
-    myStack.push(10);
-    myStack.push(15);
+   /* // Додамо залишок з першого контейнера, якщо він існує
+    while (it1 != container1.end()) {
+        mergedContainer.push_back(*it1);
+        ++it1;
+    }
 
-    cout << "Top element: " << myStack.peek() << endl;
-    cout << "Is stack empty? " << (myStack.isEmpty() ? "Yes" : "No") << endl;
-    cout << "Is stack full? " << (myStack.isFull() ? "Yes" : "No") << endl;
+    // Додамо залишок з другого контейнера, якщо він існує
+    while (it2 != container2.end()) {
+        mergedContainer.push_back(*it2);
+        ++it2;
+    }
 
-    myStack.pop();
-    cout << "Top element after pop: " << myStack.peek() << endl;
+    // Виведемо результат об'єднання
+    cout << "Merged and sorted array: ";
+    for (int num : mergedContainer) {
+        cout << num << " ";
+    }
+    cout << endl;
+
+    // 2. Розділення масиву на парні та непарні числа
+    vector<int> array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    vector<int> evenNumbers;
+    vector<int> oddNumbers;
+
+    for (int num : array) {
+        if (num % 2 == 0) {
+            evenNumbers.push_back(num);
+        } else {
+            oddNumbers.push_back(num);
+        }
+    }
+
+    // Виведемо результат розділення
+    cout << "Even numbers: ";
+    for (int num : evenNumbers) {
+        cout << num << " ";
+    }
+    cout << endl;
+
+    cout << "Odd numbers: ";
+    for (int num : oddNumbers) {
+        cout << num << " ";
+    }
+    cout << endl;
+
+    // 3. Перевірка чи Dequeue читається однаково вперед і назад
+    deque<int> dq = {1, 2, 3, 4, 5};
+
+    // Перевірка вперед
+    cout << "Forward traversal: ";
+    for (auto it = dq.begin(); it != dq.end(); ++it) {
+        cout << *it << " ";
+    }
+    cout << endl;
+
+    // Перевірка назад
+    cout << "Hello  World: ";
+    for (auto rit = dq.rbegin(); rit != dq.rend(); ++rit) {
+        cout << *rit << " ";
+    }
+    cout << endl;
+
+    // Перевірка на ідентичність впередніх та зворотних ітераторів
+    bool isPalindrome = true;
+    auto it = dq.begin();
+    auto rit = dq.rbegin();
+    while (it != dq.end() && rit != dq.rend()) {
+        if (*it != *rit) {
+            isPalindrome = false;
+            break;
+        }
+        ++it;
+        ++rit;
+    }
+
+    if (isPalindrome) {
+        cout << "Deque reads the same forwards and backwards." << endl;
+    } else {
+        cout << "Deque does not read the same forwards and backwards." << endl;
+    }
 
     return 0;
 }
-
 
